@@ -2,6 +2,8 @@ import random
 import string
 
 def caracter_valido (letra):
+    """Esta función evalúa que el usuario usuario NO ingresa más de una letra, un número o
+    cualquier otro carácter inválido"""
     resultado = False
     let_lower = string.ascii_lowercase
     if (letra in let_lower):
