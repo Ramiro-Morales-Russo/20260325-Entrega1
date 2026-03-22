@@ -10,19 +10,23 @@ def caracter_valido (letra):
         resultado = True
     return resultado
 
+# Se cambiará la estructura de "words" para que pase a ser un diccionario
+# Se usarán las palabras actuales para la cateogría informática y se crearán 2 nuevas categorías
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+words = {
+        "informatica":["python","programa","variable","funcion","bucle","cadena","entero","lista",],
+        "bandas_rock":["acdc","metallica","muse","slipknot","airbag"],
+        "deportes":["futbol","basquet","hockey","natacion","atletismo","voleyball"]
+        }
 
-word = random.choice(words)
+categorias = list(words.keys())
+
+print(f"Selecciona una de las siguientes categorías para jugar: {"-" .join(categorias)}")
+
+
+categoria_elegida = input('Ingrese la categoría: ')
+
+word = random.choice(words[categoria_elegida])
 guessed = []
 attempts = 6
 puntaje_jugador = 0
